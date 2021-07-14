@@ -354,22 +354,31 @@
           </div>
           <section class="main-chat">
             <div class="chat-title">ЧАТ</div>
-            <form action="#" id="form" class="form flex flex-d-c">
+            <form id="form" class="form flex flex-d-c">
               <h4 class="form-title">
                 Заполните форму и закажите бесплатную консультацию
               </h4>
               <input
                 type="text"
                 class="input-name input-text"
+								name="name"
                 placeholder="Имя"
+								pattern="[A-Za-zА-Яа-яЁё]+"
+								required
+								title="только буквы"
               />
               <input
-                type="text"
+                type="tel"
                 class="input-phone input-text"
+								name="phone"
+								id="phone"
                 placeholder="Телефон"
+								pattern="\+(375)\(\d\d\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
+								required
+								title="+375(XX)XXX-XX-XX"
               />
               <input
-                type="button"
+                type="submit"
                 class="input-button"
                 value="Заказать консультацию"
               />
@@ -510,5 +519,6 @@
 				<img src="./assets/img/close.png" alt="close">
 			</div>
 		</div>
+		<script src="./main.js"></script>
   </body>
 </html>

@@ -61,10 +61,10 @@ h4,
 }
 
 h1 {
-	width: 1px;
-	height: 1px;
-	opacity: 0;
-	font-size: 1px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  font-size: 1px;
 }
 
 .container {
@@ -133,6 +133,10 @@ h4 {
 
 .none {
   display: none;
+}
+
+.hidden {
+	opacity: 0;
 }
 //==================== /common ===============//
 
@@ -361,6 +365,10 @@ h4 {
 .input-name,
 .input-phone {
   width: 330px;
+}
+
+.input-name,
+.input-phone {
   padding: 12px 20px;
   background: $light-sm;
   border: 1px solid $primary-light;
@@ -372,10 +380,18 @@ h4 {
   outline: none;
 }
 
+.input-name:not(:focus):invalid,
+.input-phone:not(:focus):invalid {
+  border: 1px solid $primary-light;
+}
+
 .input-name:invalid,
-.input-phone:invalid {
+.input-phone:invalid,
+.invalid {
   border: 1px solid $danger;
 }
+
+
 
 .input-name,
 .input-phone,
@@ -477,6 +493,7 @@ h4 {
   z-index: 10;
   background-color: rgb(87, 241, 87);
   width: 447px;
+  animation: popup-form 1s;
 }
 
 .message {
@@ -486,6 +503,7 @@ h4 {
   border-radius: 8px;
   flex-direction: column;
   justify-content: center;
+  animation: popup-form 1s;
 }
 
 .message-title,
@@ -506,6 +524,16 @@ h4 {
 .message-btn {
   top: 20px;
   right: 20px;
+}
+
+@keyframes popup-form {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
 }
 
 @media (max-width: 1439px) and (min-width: 1024px) {
